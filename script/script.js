@@ -13,6 +13,7 @@
 const myList = document.getElementById("emails");
 
 const generateMails = document.querySelector(".btn-success");
+generateMails.addEventListener("click", createList);
 
 function createList() {
     myList.innerHTML = "";
@@ -27,4 +28,3 @@ function createList() {
 }
 
 
-generateMails.addEventListener("click", createList);
