@@ -15,11 +15,11 @@ const myList = document.getElementById("emails");
 
 let mailAddresses = []
 
-axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((address) => {
-    for (let i = 0; i < 10; i++) {
-        mailAddresses.push(address.data.response);
-
-    }
-    console.log(mailAddresses);
-})
+for (let i = 0; i < 10; i++) {
+    axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((address) => {
+        let eMail = address.data.response
+        mailAddresses.push(eMail);
+        myList.innerHTML += `<li>${eMail}</li>`
+    });
+}
 
