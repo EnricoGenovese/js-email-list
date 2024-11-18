@@ -1,10 +1,37 @@
-body {
-    font-family: "Raleway", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+/* Root */
+:root {
+    --bg-body: #8F5C38;
+    --bg-h1: #ABA9BF;
+    --text-main: #2c292b;
+    --text-constrast: #AA4465;
 }
 
+/* Elementi della pagina */
 
+body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.2em;
+    background-color: var(--bg-body)
+}
+
+h1 {
+    background-color: var(--bg-h1);
+    color: var(--text-constrast)
+}
+
+i,
 li {
-    padding-top: 10px;
+    color: var(--text-main)
+}
+
+/* Linea tra gli indirizzi e-mail */
+
+li::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-main);
 }
