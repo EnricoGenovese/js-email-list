@@ -12,14 +12,19 @@
 
 const myList = document.getElementById("emails");
 
+const generateMails = document.querySelector(".btn-success");
 
-let mailAddresses = []
-
-for (let i = 0; i < 10; i++) {
-    axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((address) => {
-        let eMail = address.data.response
-        mailAddresses.push(eMail);
-        myList.innerHTML += `<li>${eMail}</li>`
-    });
+function createList() {
+    myList.innerHTML = "";
+    let mailAddresses = []
+    for (let i = 0; i < 10; i++) {
+        axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((address) => {
+            let eMail = address.data.response
+            mailAddresses.push(eMail);
+            myList.innerHTML += `<li><span class="fa-li"><i class="fa-regular fa-envelope"></i></span>${eMail}</li>`
+        });
+    }
 }
 
+
+generateMails.addEventListener("click", createList);
